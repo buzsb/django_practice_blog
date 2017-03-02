@@ -4,5 +4,5 @@ from .models import Resume
 
 
 def resume(request):
-    resume = Resume.objects.all()
-    return render(resume, 'resume/resume.html', {'resume': resume})
+    resume = Resume.objects.get(pk=1)
+    return render(request, 'resume/resume.html', {'resume': resume})
