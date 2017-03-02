@@ -6,4 +6,15 @@ from django.db import models
 
 
 class Resume(models.Model):
-    vacancy_title = models.CharField(max_length=200)
+    position_title = models.CharField(max_length=200)
+    name = models.CharField(max_length=200)
+    age = models.IntegerField()
+    e_mail = models.CharField(max_length=30)
+    phone_number = models.IntegerField()
+    education = models.CharField(max_length=500)
+    languages_skills = models.CharField(max_length=200)
+    skills = models.TextField()
+    additional_information = models.TextField()
+
+    def __str__(self):
+        return self.position_title
