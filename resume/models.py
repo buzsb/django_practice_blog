@@ -8,7 +8,7 @@ from django.db import models
 class Resume(models.Model):
     position_title = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
-    age = models.IntegerField()
+    birthday = models.DateField(blank=True, null=True)
     e_mail = models.CharField(max_length=30)
     phone_number = models.IntegerField()
     education = models.CharField(max_length=500)
