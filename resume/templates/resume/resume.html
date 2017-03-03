@@ -1,16 +1,50 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Oleksandr Buz resume</title>
-</head>
+    <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'resume/style.css' %}">
+        <title>Oleksandr Buz resume</title>
+    </head>
 <body>
-    <div>{{ resume.position_title }}</div>
-    <div>{{ resume.name }}</div>
-    <div>{{ resume.age }}</div>
-    <div>{{ resume.e_mail }}</div>
-    <div>{{ resume.phone_number }}</div>
-    <div>{{ resume.languages_skills }}</div>
-    <div>{{ resume.skills }}</div>
-    <div>{{ resume.additional_information }}</div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="position_title">
+                    <h1>{{ resume.position_title }}</h1>
+                </div>
+                <div class="name"> 
+                    Name - {{ resume.name }}
+                </div>
+                <div class="age">
+                    Age - {{ resume.age }}
+                </div>
+                <div class="e_mail"> 
+                    Email - {{ resume.e_mail }}
+                </div>
+                <div class="phone_number"> 
+                    <p>Phone number - {{ resume.phone_number }}</p>
+                </div>
+                <div class="education">
+                    <h3>Education</h3>
+                    <p>{{ resume.education }}</p>
+                </div>
+                <div class="languages_skills">
+                    <h3>Languages</h3>
+                    <p>{{ resume.languages_skills }}</p>
+                </div>
+                <div class="skills">
+                    <h3>Professional skills</h3>
+                    <p>{{ resume.skills }}</p>
+                <div>
+                <div class="additional_information">
+                    <h3>Additional Information</h3>
+                    <p>{{ resume.additional_information }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
