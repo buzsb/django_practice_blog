@@ -7,6 +7,11 @@ from .models import Resume
 
 def resume(request):
     resume = Resume.objects.get(pk=1)
+    show_comments = 'show_comments' in request.GET
     age = relativedelta(datetime.date.today(), resume.birthday).years
     return render(
-        request, 'resume/resume.html', {'resume': resume, 'age': age})
+        request, 'resume/resume.html', {
+            'resume': resume,
+            'age': age,
+            'show_comments': show_comments,
+        })

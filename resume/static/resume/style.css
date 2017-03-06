@@ -6,3 +6,9 @@
     font-size: 14pt;
     padding: 5px
 }
+
+.comments {
+    display: inline-flex;
+    background-color: #b3cccc;
+    margin-bottom: 5px;
+}

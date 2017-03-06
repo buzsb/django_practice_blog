@@ -12,6 +12,11 @@
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
+                {% if not show_comments %}
+                    <a href="{% url 'resume' %}?show_comments="> Show comments </a>
+                {% else %}
+                    <a href="{% url 'resume' %}"> Hide comments </a>
+                {% endif %}
                 <div class="position_title">
                     <h1> <strong>{{ resume.position_title }}</strong> </h1>
                 </div>
@@ -20,6 +25,12 @@
                 </div>
                 <div class="age">
                     Age - {{ age }}
+                    <br>
+                    {% if show_comments %}
+                        <div class="comments">
+                            Age is calculated dynamically using date of birth and current date
+                        </div>
+                    {% endif %}
                 </div>
                 <div class="e_mail"> 
                     Email - {{ resume.e_mail }}
@@ -38,7 +49,7 @@
                 <div class="skills">
                     <h3> <strong>Professional skills</strong> </h3>
                     <p>{{ resume.skills }}</p>
-                <div>
+                </div>
                 <div class="additional_information">
                     <h3> <strong>Additional Information</strong> </h3>
                     <p>{{ resume.additional_information }}</p>
