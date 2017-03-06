@@ -1,8 +1,10 @@
 import datetime
+import pdb
 from django.shortcuts import render
 from dateutil.relativedelta import relativedelta
 from .models import Resume
 # Create your views here.
+#pdb.set_trace()
 
 
 def resume(request):

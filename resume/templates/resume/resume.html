@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'resume/style.css' %}">
@@ -20,6 +22,11 @@
                 </div>
                 <div class="age">
                     Age - {{ age }}
+                    <div id="comments" class="collapse">
+                        <div class="comments">
+                            Here age calculate dynamically, using a birthday and present date
+                        </div>
+                    </div>
                 </div>
                 <div class="e_mail"> 
                     Email - {{ resume.e_mail }}
@@ -38,10 +45,15 @@
                 <div class="skills">
                     <h3> <strong>Professional skills</strong> </h3>
                     <p>{{ resume.skills }}</p>
-                <div>
+                </div>
                 <div class="additional_information">
                     <h3> <strong>Additional Information</strong> </h3>
                     <p>{{ resume.additional_information }}</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="comments-button">
+                    <button data-toggle="collapse" data-target="#comments">Show/Hide Comments</button>
                 </div>
             </div>
         </div>
