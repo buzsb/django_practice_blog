@@ -47,6 +47,11 @@
                     {% for language_level in language_levels %}
                         <p>{{ language_level.language.language }} - {{ language_level.level }}</p>
                     {% endfor %}
+                    {% if show_comments %}
+                        <div class="comments">
+                            Field of languages ​​and their level is made with addition of two models and using Django many-to-many relationship
+                        </div>
+                    {% endif %}
                 </div>
                 <div class="skills">
                     <h3> <strong>Professional skills</strong> </h3>
