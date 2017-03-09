@@ -12,9 +12,22 @@ class Resume(models.Model):
     e_mail = models.CharField(max_length=30)
     phone_number = models.IntegerField()
     education = models.CharField(max_length=500)
-    languages_skills = models.CharField(max_length=200)
     skills = models.TextField()
     additional_information = models.TextField()
 
     def __str__(self):
         return self.position_title
+
+
+class Languages(models.Model):
+    language = models.CharField(max_length=200)
+    languages_levels = models.ManyToManyField(Resume, through='LanguageLevel')
+
+    def __str__(self):
+        return self.language
+
+
+class LanguageLevel(models.Model):
+    language = models.ForeignKey(Languages, on_delete=models.CASCADE)
+    resume = models.ForeignKey(Resume, on_delete=models.CASCADE)
+    language_level = models.CharField(max_length=200)
