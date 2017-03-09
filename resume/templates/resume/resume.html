@@ -44,8 +44,8 @@
                 </div>
                 <div class="languages_skills">
                     <h3> <strong>Languages</strong> </h3>
-                    {% for language in languages %}
-                        <p>{{ language.language.language }} - {{ language.level }}</p>
+                    {% for language_level in language_levels %}
+                        <p>{{ language_level.language.language }} - {{ language_level.level }}</p>
                     {% endfor %}
                 </div>
                 <div class="skills">

@@ -9,11 +9,11 @@ def resume(request):
     resume = Resume.objects.get(pk=1)
     show_comments = 'show_comments' in request.GET
     age = relativedelta(datetime.date.today(), resume.birthday).years
-    languages = resume.languagelevel_set.all()
+    language_levels = resume.languagelevel_set.all()
     return render(
         request, 'resume/resume.html', {
             'resume': resume,
             'age': age,
             'show_comments': show_comments,
-            'languages': languages,
+            'language_levels': language_levels,
         })
