@@ -44,7 +44,14 @@
                 </div>
                 <div class="languages_skills">
                     <h3> <strong>Languages</strong> </h3>
-                    <p>{{ resume.languages_skills }}</p>
+                    {% for language_level in language_levels %}
+                        <p>{{ language_level.language.language }} - {{ language_level.level }}</p>
+                    {% endfor %}
+                    {% if show_comments %}
+                        <div class="comments">
+                            Languages are stored in a separate table and levels - in the intermediate table, which is also used for many-to-many relationship
+                        </div>
+                    {% endif %}
                 </div>
                 <div class="skills">
                     <h3> <strong>Professional skills</strong> </h3>
