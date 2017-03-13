@@ -12,3 +12,14 @@
     background-color: #b3cccc;
     margin-bottom: 5px;
 }
+
+.top-buttons a {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+.top-buttons a:hover, .top-buttons a:focus {
+    background: #a6a6a6;
+    border: solid 1px black;
+    color: white;
+}
