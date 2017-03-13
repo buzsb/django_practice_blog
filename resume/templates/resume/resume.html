@@ -1,6 +1,8 @@
 {% extends 'resume/base.html' %}
 
-{% block title %}{{ resume.name }}{% endblock %}
+{% block title %}
+    {{ resume.name }} resume
+{% endblock %}
 
 {% block content %}
     <div class="col-md-8">
@@ -13,7 +15,7 @@
                 {% endif %}
                 <a href="https://github.com/buzsb/django_practice_blog" class="btn btn-default">
                     Code of this site
-                    <img src="http://i.stack.imgur.com/eoNf5.png" height="18">
+                    <img src="/static/resume/github.png" height="18">
                 </a>
             </div>
         </div>
