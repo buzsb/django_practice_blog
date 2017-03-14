@@ -18,7 +18,7 @@ class Resume(models.Model):
     birthday = models.DateField(blank=True, null=True)
     e_mail = models.CharField(max_length=30)
     phone_number = models.CharField(max_length=30)
-    skype = models.CharField(max_length=30, default='skype_id')
+    skype = models.CharField(max_length=30, blank=True, null=True)
     education = models.CharField(max_length=500)
     languages = models.ManyToManyField(Language, through='LanguageLevel')
     skills = models.TextField()
