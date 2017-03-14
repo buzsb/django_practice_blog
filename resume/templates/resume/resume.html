@@ -19,14 +19,19 @@
                 </a>
             </div>
         </div>
-        <div class="position_title">
-            <h1> <strong>{{ resume.position_title }}</strong> </h1>
-        </div>
         <div class="name"> 
-            Name - {{ resume.name }}
+            <h1>
+                <ins><strong>{{ resume.name }}</strong></ins>
+            </h1>
         </div>
+        <div class="position_title">
+            <h2> 
+                <ins><strong>{{ resume.position_title }}</strong></ins>
+            </h2>
+        </div>
+        
         <div class="age">
-            Age - {{ age }}
+            Age - {{ age }} years old
             <br>
             {% if show_comments %}
                 <div class="comments">
@@ -35,10 +40,13 @@
             {% endif %}
         </div>
         <div class="e_mail"> 
-            Email - {{ resume.e_mail }}
+            Email - <a href="mailto:{{ resume.e_mail }}">{{ resume.e_mail }}</a>
         </div>
         <div class="phone_number"> 
-            <p>Phone number - {{ resume.phone_number }}</p>
+            Phone number - {{ resume.phone_number }}
+        </div>
+        <div class="skype"> 
+            <p>Skype - {{ resume.skype }}</p>
         </div>
         <div class="education">
             <h3> <strong>Education</strong> </h3>
