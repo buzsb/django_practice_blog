@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Resume, Language, LanguageLevel
+from .models import Person, Language, LanguageLevel
 
 
 class LanguageLevel(admin.TabularInline):
@@ -15,5 +15,5 @@ class LanguageAdmin(admin.ModelAdmin):
     inlines = (LanguageLevel,)
 
 
-admin.site.register(Resume, ResumeAdmin)
+admin.site.register(Person, ResumeAdmin)
 admin.site.register(Language, ResumeAdmin)

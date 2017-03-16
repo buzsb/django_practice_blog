@@ -1,18 +1,18 @@
 import datetime
 from django.shortcuts import render
 from dateutil.relativedelta import relativedelta
-from .models import Resume
+from .models import Person
 # Create your views here.
 
 
-def resume(request):
-    resume = Resume.objects.get(pk=1)
+def person(request):
+    cv = Person.objects.get(pk=1)
     show_comments = 'show_comments' in request.GET
-    age = relativedelta(datetime.date.today(), resume.birthday).years
-    language_levels = resume.languagelevel_set.all()
+    age = relativedelta(datetime.date.today(), cv.birthday).years
+    language_levels = cv.languagelevel_set.all()
     return render(
-        request, 'resume/resume.html', {
-            'resume': resume,
+        request, 'cv/cv.html', {
+            'cv': cv,
             'age': age,
             'show_comments': show_comments,
             'language_levels': language_levels,

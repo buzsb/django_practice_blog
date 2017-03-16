@@ -1,7 +1,7 @@
-{% extends 'resume/base.html' %}
+{% extends 'cv/base.html' %}
 
 {% block title %}
-    {{ resume.name }}'s resume
+    {{ cv.name }}'s CV
 {% endblock %}
 
 {% block content %}
@@ -9,30 +9,30 @@
         <div class="top-buttons">
             <div class="btn-group">
                 {% if not show_comments %}
-                    <a href="{% url 'resume' %}?show_comments=" class="btn btn-default"> Show comments </a>
+                    <a href="{% url 'person' %}?show_comments=" class="btn btn-default"> Show comments </a>
                 {% else %}
-                    <a href="{% url 'resume' %}" class="btn btn-default"> Hide comments </a>
+                    <a href="{% url 'person' %}" class="btn btn-default"> Hide comments </a>
                 {% endif %}
                 <a target="_blank" href="https://github.com/buzsb/django_practice_blog" class="btn btn-default">
                     Code of this site
-                    <img src="/static/resume/github.png" height="18">
+                    <img src="/static/cv/github.png" height="18">
 
                 <a target="_blank" href="https://github.com/buzsb" class="btn btn-default">
                     My GitHub page
-                    <img src="/static/resume/github.png" height="18">
+                    <img src="/static/cv/github.png" height="18">
                 </a>
             </div>
         </div>
 
         <div class="name"> 
             <h1>
-                <strong>{{ resume.name }}</strong>
+                <strong>{{ cv.name }}</strong>
             </h1>
         </div>
 
         <div class="position_title">
             <h2> 
-                <strong>{{ resume.position_title }}</strong>
+                <strong>{{ cv.position_title }}</strong>
             </h2>
         </div>
         
@@ -47,20 +47,20 @@
         </div>
 
         <div class="e_mail"> 
-            Email - <a href="mailto:{{ resume.e_mail }}">{{ resume.e_mail }}</a>
+            Email - <a href="mailto:{{ cv.e_mail }}">{{ cv.e_mail }}</a>
         </div>
 
         <div class="phone_number"> 
-            Phone number - {{ resume.phone_number }}
+            Phone number - {{ cv.phone_number }}
         </div>
 
         <div class="skype"> 
-            <p>Skype - {{ resume.skype }}</p>
+            <p>Skype - {{ cv.skype }}</p>
         </div>
 
         <div class="skills">
             <h3> <strong>Professional skills</strong> </h3>
-            <p>{{ resume.skills }}</p>
+            <p>{{ cv.skills }}</p>
         </div>
 
         <div class="languages_skills">
@@ -77,12 +77,12 @@
         
         <div class="education">
             <h3> <strong>Education</strong> </h3>
-            <p>{{ resume.education }}</p>
+            <p>{{ cv.education }}</p>
         </div>
 
         <div class="additional_information">
             <h3> <strong>Additional Information</strong> </h3>
-            <p>{{ resume.additional_information }}</p>
+            <p>{{ cv.additional_information }}</p>
         </div>
     </div>
 {% endblock %}
