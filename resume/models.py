@@ -12,7 +12,7 @@ class Language(models.Model):
         return self.language
 
 
-class Resume(models.Model):
+class Person(models.Model):
     position_title = models.CharField(max_length=200)
     name = models.CharField(max_length=200)
     birthday = models.DateField(blank=True, null=True)
@@ -30,5 +30,5 @@ class Resume(models.Model):
 
 class LanguageLevel(models.Model):
     language = models.ForeignKey(Language, on_delete=models.CASCADE)
-    resume = models.ForeignKey(Resume, on_delete=models.CASCADE)
+    resume = models.ForeignKey(Person, on_delete=models.CASCADE)
     level = models.CharField(max_length=200)
