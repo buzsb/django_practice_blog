@@ -6,13 +6,13 @@ from .models import Person
 
 
 def person(request):
-    person = Person.objects.get(pk=1)
+    cv = Person.objects.get(pk=1)
     show_comments = 'show_comments' in request.GET
-    age = relativedelta(datetime.date.today(), person.birthday).years
-    language_levels = person.languagelevel_set.all()
+    age = relativedelta(datetime.date.today(), cv.birthday).years
+    language_levels = cv.languagelevel_set.all()
     return render(
-        request, 'resume/resume.html', {
-            'person': person,
+        request, 'cv/cv.html', {
+            'cv': cv,
             'age': age,
             'show_comments': show_comments,
             'language_levels': language_levels,
