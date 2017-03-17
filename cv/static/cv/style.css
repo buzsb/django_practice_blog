@@ -1,5 +1,5 @@
 body {
-    background-color: #fff2cc;
+    background-color: #aad6a9;
 }
 
 .content {
@@ -14,7 +14,7 @@ body {
 
 .comments {
     display: inline-flex;
-    background-color: #b3cccc;
+    background-color: #FFE9A3;
     margin-bottom: 5px;
     border: solid 1px black;
 }
@@ -26,7 +26,8 @@ body {
 }
 
 .top-buttons a:hover, .top-buttons a:focus {
-    background: #a6a6a6;
+    background: #7E827A;
     border: solid 1px black;
+    text-shadow: 1px 1px black;
     color: white;
 }
